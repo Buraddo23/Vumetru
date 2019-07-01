@@ -1,0 +1,149 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\Dorin\Documents\Dev\VumetruEthergate
+vclk_gen
+I9JXf]YX1@hnVm9;oki?<E3
+V4YSUC533aiH`FemC_[jRz3
+Z0 dC:\Users\Dorin\Documents\Dev\Vumetru
+w1558023646
+8C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
+L0 3
+Z1 OV;L;6.5b;42
+r1
+31
+Z2 !s102 -nocovercells
+Z3 o-work work -nocovercells -O0
+!s100 DzmOliJIB]aGaQS58H^hC1
+!s85 0
+!s101 -O0
+vclk_gen_tb
+IfKnfleFI[4?=>7o@c:]@;3
+VKlD;o=NS01^Lj^RWdS>_=2
+Z4 dC:\Users\Dorin\Documents\Dev\Vumetru
+w1557418756
+8C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen_tb.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/clk_gen_tb.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 KoIP33m9?0aoBkSIIUYmA3
+!s85 0
+!s101 -O0
+vdata_bistabil
+I?ieAM:1Uk_;lLGKoGz3ii2
+Vd4]jQDMC`TFkZC2a;;c=62
+R4
+w1558627276
+8C:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 M]bBmA3UB2eNl]4cA`Gc]2
+!s85 0
+!s101 -O0
+vtop
+ITSR=FMm04J`95KAoD8iMZ1
+VO@jdPNkWiZkmH3f`AlAY^2
+R4
+w1558629330
+8C:/Users/Dorin/Documents/Dev/Vumetru/top.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/top.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 2ENS[@C^2k670>SF4bK7[0
+!s85 0
+!s101 -O0
+vtop_clk_gen
+ImDY5`=o[R[CLnkHW[n9D=3
+Ve>9zf42Qj9@E_BkL^]@@[1
+R4
+w1557420880
+8C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 B9V9So28OIfM@ITf5cEYU1
+!s85 0
+!s101 -O0
+vtop_clk_gen_tb
+Ig0FfCO1U;PN2KOF_<1I8o3
+VR[gO]h3iZ2XbAcDj`9[3L0
+R4
+w1557418878
+8C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 SHkdg=8`iHT]?T`7HCDJ@2
+!s85 0
+!s101 -O0
+vtop_tb
+IPJ71S_?U?z6dSENO=G=KN3
+VTmB3H>oJJYE4179BB6CEQ3
+R4
+w1558627118
+8C:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 2b]LJM>A]KL8`X8=3L5n80
+!s85 0
+!s101 -O0
+vuart
+!s100 l^YaeMjb;fJXjCbo^hjYd2
+IRCC`<gBAJI1]h@gTMS6K81
+VmIDPijh:Be^n<eURUZG0n1
+R4
+w1558629252
+8C:/Users/Dorin/Documents/Dev/Vumetru/uart.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/uart.v
+L0 3
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3
+vuart_tb
+IofKUbdQdd5:KH3^N`9?:k3
+VCg^Mg0=TIfP0n0Eo]V>U63
+R4
+w1556187916
+8C:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 ZiWgHDKGUmX10nN05h7[@3
+!s85 0
+!s101 -O0
