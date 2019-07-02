@@ -1,4 +1,11 @@
-C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
+C:/Users/Dorin/Documents/Dev/Vumetru/vga.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module vga
+
+Top level modules:
+	vga
+
+} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module top_clk_gen_tb
 

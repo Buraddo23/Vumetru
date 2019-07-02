@@ -20,19 +20,19 @@ module vga_tb;
     
     vga 
         #(
-            .thaddr(10),
-            .thfp(2),
-            .ths(4),
-            .thbp(3),
+            .thaddr(1),
+            .thfp(1),
+            .ths(1),
+            .thbp(1),
             .thbd(0),
-            .tvaddr(8),
+            .tvaddr(1),
             .tvfp(1),
-            .tvs(2),
-            .tvbp(3),
+            .tvs(1),
+            .tvbp(1),
             .tvbd(0),
             .h_pol(0),
             .v_pol(0),
-            .c_size(4)
+            .c_size(2)
         ) DUT(
             .pixel_clock(tb_clk), 
             .reset(tb_reset),
