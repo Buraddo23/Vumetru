@@ -5,10 +5,11 @@ module top(rx, clk_board, enable, reset, data);
               baud_rate = 9600;
 
     input rx, clk_board, enable, reset;
-    output [7:0] data;
+    output [7:0] data, red, green, blue;
+    output h_sync, v_sync;
     
     wire [7:0] data_uart;
-    wire clk_uart, load;
+    wire clk_uart, load, clk_vga;
     
     data_bistabil ff
         (
@@ -20,6 +21,7 @@ module top(rx, clk_board, enable, reset, data);
             .error(error), 
             .data_out(data)
         );
+        
     top_clk_gen 
         #(
             .board_freq(board_freq), 
@@ -27,10 +29,12 @@ module top(rx, clk_board, enable, reset, data);
         ) clk_gen_module
         (
             .clk_board(clk_board), 
-            .clk_out_uart(clk_uart), 
             .enable(enable), 
-            .reset(reset)
+            .reset(reset), 
+            .clk_out_uart(clk_uart), 
+            .clk_out_vga(clk_vga)
         );
+        
     uart uart_module
         (
             .rx(rx), 
@@ -39,5 +43,16 @@ module top(rx, clk_board, enable, reset, data);
             .data(data_uart), 
             .load(load), 
             .error(error)
+        );
+        
+    vga vga_module
+        (
+            .pixel_clock(clk_vga), 
+            .reset(reset), 
+            .h_sync(h_sync), 
+            .v_sync(v_sync), 
+            .red(red), 
+            .green(green), 
+            .blue(blue)
         );
 endmodule

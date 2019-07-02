@@ -116,7 +116,6 @@ R3
 !s85 0
 !s101 -O0
 vuart
-!s100 l^YaeMjb;fJXjCbo^hjYd2
 IRCC`<gBAJI1]h@gTMS6K81
 VmIDPijh:Be^n<eURUZG0n1
 R4
@@ -126,11 +125,12 @@ FC:/Users/Dorin/Documents/Dev/Vumetru/uart.v
 L0 3
 R1
 r1
-!s85 0
 31
-!s101 -O0
 R2
 R3
+!s100 l^YaeMjb;fJXjCbo^hjYd2
+!s85 0
+!s101 -O0
 vuart_tb
 IofKUbdQdd5:KH3^N`9?:k3
 VCg^Mg0=TIfP0n0Eo]V>U63
@@ -147,3 +147,19 @@ R3
 !s100 ZiWgHDKGUmX10nN05h7[@3
 !s85 0
 !s101 -O0
+vvga
+!s100 geGk2nJ<edTg26;SHSYzE0
+IJlJR8<J^ZYm=__KZPA5BM2
+Vg^UGOSKYc3jR`hhBh40;U3
+R4
+w1561985120
+8C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/vga.v
+L0 3
+R1
+r1
+!s85 0
+31
+!s101 -O0
+R2
+R3

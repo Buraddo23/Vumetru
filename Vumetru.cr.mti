@@ -19,20 +19,6 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	data_bistabil
 
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module clk_gen
-
-Top level modules:
-	clk_gen
-
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/top.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module top
-
-Top level modules:
-	top
-
 } {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/uart.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/uart.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module uart
@@ -53,12 +39,5 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 
 Top level modules:
 	clk_gen_tb
-
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module top_clk_gen
-
-Top level modules:
-	top_clk_gen
 
 } {} {}}

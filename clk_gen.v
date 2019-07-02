@@ -4,7 +4,7 @@ module clk_gen(clk_in, clk_out, enable, reset);
     parameter in_freq = 1, 
               out_freq = 1,
               max_value = in_freq / out_freq,
-//              bit_size = $clog2(max_value);
+//            bit_size = $clog2(max_value);
               bit_size = 13;
 
     input clk_in, enable, reset;
