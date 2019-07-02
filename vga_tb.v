@@ -32,7 +32,7 @@ module vga_tb;
             .tvbd(0),
             .h_pol(0),
             .v_pol(0),
-            .c_size(5)
+            .c_size(4)
         ) DUT(
             .pixel_clock(tb_clk), 
             .reset(tb_reset),

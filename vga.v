@@ -70,7 +70,7 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
             blue_nxt   = 2'b0;
         end
         else if (h_counter_ff <= thfp + ths + thbp + thbd + thaddr) begin
-            //Active pixels (set rgb values as needed, H_pos = h_counter-thfp-ths-thbp-thbd
+            //Active pixels (set rgb values as needed, H_pos = h_counter - thfp - ths - thbp - thbd
             h_sync_nxt = !h_pol;
         end
         else begin
@@ -116,13 +116,18 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
         end
         
         //At display area
-        if ((h_counter_ff <= thfp + ths + thbp + thbd + thaddr) && (v_counter_ff <= tvfp + tvs + tvbp + tvbd + tvaddr)) begin
+        if ((h_counter_ff > thfp + ths + thbp + thbd) && (v_counter_ff > tvfp + tvs + tvbp + tvbd)) begin
             red_nxt   = 3'b111;
             green_nxt = 3'b111;
             blue_nxt  = 2'b10;
         end
         
-        h_counter_nxt = h_counter_ff + 'b1;
+        if (h_counter_ff == thfp + ths + thbp + thbd + thaddr) begin
+            h_counter_nxt = 'b0;
+        end
+        else begin
+            h_counter_nxt = h_counter_ff + 'b1;
+        end
     end
 
     always @ (posedge pixel_clock or posedge reset) begin
