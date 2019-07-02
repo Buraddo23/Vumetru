@@ -1,12 +1,15 @@
 `timescale 1ns/1ns
 
-module top(rx, clk_board, enable, reset, data);
+module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue);
     parameter board_freq = 50000000,
-              baud_rate = 9600;
+              baud_rate  =     9600,
+              vga_freq   = 25175000;
 
     input rx, clk_board, enable, reset;
-    output [7:0] data, red, green, blue;
+    output [7:0] data;
     output h_sync, v_sync;
+    output [2:0] red, green;
+    output [1:0] blue;
     
     wire [7:0] data_uart;
     wire clk_uart, load, clk_vga;
@@ -25,7 +28,8 @@ module top(rx, clk_board, enable, reset, data);
     top_clk_gen 
         #(
             .board_freq(board_freq), 
-            .baud_rate(baud_rate)
+            .baud_rate(baud_rate),
+            .vga_freq(vga_freq)
         ) clk_gen_module
         (
             .clk_board(clk_board), 

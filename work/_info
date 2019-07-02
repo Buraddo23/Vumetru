@@ -7,7 +7,7 @@ vclk_gen
 I9JXf]YX1@hnVm9;oki?<E3
 V4YSUC533aiH`FemC_[jRz3
 Z0 dC:\Users\Dorin\Documents\Dev\Vumetru
-w1558023646
+w1561986112
 8C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
 L0 3
@@ -52,10 +52,10 @@ R3
 !s85 0
 !s101 -O0
 vtop
-ITSR=FMm04J`95KAoD8iMZ1
-VO@jdPNkWiZkmH3f`AlAY^2
+ID3M0@j8L]9<klLak<PlmY3
+VAhEb4CY`T2zYOlI4eDbAh2
 R4
-w1558629330
+w1562056875
 8C:/Users/Dorin/Documents/Dev/Vumetru/top.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top.v
 L0 3
@@ -64,14 +64,14 @@ r1
 31
 R2
 R3
-!s100 2ENS[@C^2k670>SF4bK7[0
+!s100 gbRdjV59VZ]<5dS^OZ8JH3
 !s85 0
 !s101 -O0
 vtop_clk_gen
-ImDY5`=o[R[CLnkHW[n9D=3
-Ve>9zf42Qj9@E_BkL^]@@[1
+IzNdlOGJLm@LeGd?4M3OkL1
+VDZ[NXH4ib6TX4A1QQDPUk2
 R4
-w1557420880
+w1562056906
 8C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
 L0 3
@@ -80,7 +80,7 @@ r1
 31
 R2
 R3
-!s100 B9V9So28OIfM@ITf5cEYU1
+!s100 X3<]c^SdY1jTUCek94PIa2
 !s85 0
 !s101 -O0
 vtop_clk_gen_tb
@@ -148,13 +148,29 @@ R3
 !s85 0
 !s101 -O0
 vvga
-!s100 geGk2nJ<edTg26;SHSYzE0
-IJlJR8<J^ZYm=__KZPA5BM2
-Vg^UGOSKYc3jR`hhBh40;U3
+IW19ak;g8RUcOE8D7f:eT12
+V<LK58AlGhN<TcXz3C>@n61
 R4
-w1561985120
+w1562056387
 8C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/vga.v
+L0 3
+R1
+r1
+31
+R2
+R3
+!s100 3S10FGCgEzlQaRP22OWX53
+!s85 0
+!s101 -O0
+vvga_tb
+!s100 >[Nd9^?<QT^E`VXY0Z_Dd1
+IDa23D4klMX;<jJ8H^IIf93
+VH`EXIGXhkSH116jRgZ7g:1
+R4
+w1562056428
+8C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
+FC:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
 L0 3
 R1
 r1

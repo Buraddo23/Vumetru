@@ -13,15 +13,16 @@ entity vga is
         tvbp            : integer := 33;
         tvbd            : integer := 0;
         h_pol           : integer := 0;
-        v_pol           : integer := 0
+        v_pol           : integer := 0;
+        c_size          : integer := 9
     );
     port(
         pixel_clock     : in     vl_logic;
         reset           : in     vl_logic;
         h_sync          : out    vl_logic;
         v_sync          : out    vl_logic;
-        red             : out    vl_logic_vector(7 downto 0);
-        green           : out    vl_logic_vector(7 downto 0);
-        blue            : out    vl_logic_vector(7 downto 0)
+        red             : out    vl_logic_vector(2 downto 0);
+        green           : out    vl_logic_vector(2 downto 0);
+        blue            : out    vl_logic_vector(1 downto 0)
     );
 end vga;

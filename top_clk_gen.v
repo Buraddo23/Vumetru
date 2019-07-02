@@ -1,9 +1,10 @@
 `timescale 1ns/1ns
 
-module top_clk_gen(clk_board, enable, reset, clk_out_uart);
-    parameter board_freq = 10000,
-              baud_rate = 9600,
-              uart_freq = baud_rate*16;              
+module top_clk_gen(clk_board, enable, reset, clk_out_uart, clk_out_vga);
+    parameter board_freq = 50000000,
+              baud_rate  =     9600,
+              uart_freq  = baud_rate*16,
+              vga_freq   = 25175000;              
 
     input clk_board, enable, reset;
     output clk_out_uart, clk_out_vga;
