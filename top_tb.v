@@ -5,7 +5,9 @@ module top_tb;
 
     reg tb_rx, tb_clk_board, tb_enable, tb_reset;
     wire [7:0] tb_data;
-    //wire tb_load, tb_error;
+    wire tb_h_sync, tb_v_sync;
+    wire [2:0] tb_red, tb_green;
+    wire [1:0] tb_blue;
     
     initial begin
         tb_clk_board = 1'b1;
@@ -52,8 +54,23 @@ module top_tb;
         #delay tb_rx = 1'b0; //bit 0
         #delay tb_rx = 1'b0;
         #(5*delay) tb_rx = 1'b1;
-        #(5*delay)
-        $finish;
     end
-    top #(.board_freq(64), .baud_rate(1)) DUT(.rx(tb_rx), .clk_board(tb_clk_board), .enable(tb_enable), .reset(tb_reset), .data(tb_data));//, .load(tb_load), .error(tb_error));
+    
+    top 
+        #(
+            .board_freq(64), 
+            .baud_rate(1),
+            .vga_freq(32)
+        ) DUT(
+            .rx(tb_rx), 
+            .clk_board(tb_clk_board), 
+            .enable(tb_enable), 
+            .reset(tb_reset), 
+            .data(tb_data),
+            .h_sync(tb_h_sync), 
+            .v_sync(tb_v_sync), 
+            .red(tb_red), 
+            .green(tb_green), 
+            .blue(tb_blue)
+        );
 endmodule

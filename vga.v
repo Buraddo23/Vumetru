@@ -40,6 +40,18 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
         h_counter_nxt = h_counter_ff;
         v_counter_nxt = v_counter_ff;
         
+        //Counters update
+        if (h_counter_ff == thfp + ths + thbp + thbd + thaddr + thbd- 1) begin
+            h_counter_nxt = 'b0;
+            v_counter_nxt = v_counter_ff + 'b1;
+        end
+        else begin
+            h_counter_nxt = h_counter_ff + 'b1;
+        end
+        if (v_counter_ff == tvfp + tvs + tvbp + tvbd + thaddr + tvbd) begin
+            v_counter_nxt = 'b0;
+        end
+        
         //Horizontal sync
         if (h_counter_ff < thfp) begin
             //Front porch
@@ -63,7 +75,7 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
             blue_nxt   = 2'b0;
         end
         else if (h_counter_ff < thfp + ths + thbp + thbd) begin
-            //Border region (black bg)
+            //Right Border region (black bg)
             h_sync_nxt = !h_pol;
             red_nxt    = 3'b0;
             green_nxt  = 3'b0;
@@ -72,6 +84,13 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
         else if (h_counter_ff < thfp + ths + thbp + thbd + thaddr) begin
             //Active pixels (set rgb values as needed, H_pos = h_counter - thfp - ths - thbp - thbd
             h_sync_nxt = !h_pol;
+        end
+        else if (h_counter_ff < thfp + ths + thbp + thbd + thaddr + thbd) begin
+            //Left border
+            h_sync_nxt = !h_pol;
+            red_nxt    = 3'b0;
+            green_nxt  = 3'b0;
+            blue_nxt   = 2'b0;
         end
         
         //Vertical sync
@@ -97,7 +116,7 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
             blue_nxt   = 2'b0;
         end
         else if (v_counter_ff < tvfp + tvs + tvbp + tvbd) begin
-            //Border region (black bg)
+            //Top border region (black bg)
             v_sync_nxt = !v_pol;
             red_nxt    = 3'b0;
             green_nxt  = 3'b0;
@@ -107,23 +126,19 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
             //Active pixels (set rgb values as needed, V_pos = v_counter-tvfp-tvs-tvbp-tvbd
             v_sync_nxt = !v_pol;
         end
+        else if (v_counter_ff < tvfp + tvs + tvbp + tvbd + tvaddr + tvbd) begin
+            //Bottom border
+            v_sync_nxt = !v_pol;
+            red_nxt    = 3'b0;
+            green_nxt  = 3'b0;
+            blue_nxt   = 2'b0;
+        end
         
         //At display area
-        if ((h_counter_ff >= thfp + ths + thbp + thbd) && (v_counter_ff >= tvfp + tvs + tvbp + tvbd)) begin
+        if ((h_counter_ff >= thfp + ths + thbp + thbd) && (h_counter_ff < thfp + ths + thbp + thbd + thaddr) && (v_counter_ff >= tvfp + tvs + tvbp + tvbd) && (v_counter_ff < tvfp + tvs + tvbp + tvbd + tvaddr)) begin
             red_nxt   = 3'b111;
             green_nxt = 3'b111;
-            blue_nxt  = 2'b10;
-        end
-        
-        if (h_counter_ff == thfp + ths + thbp + thbd + thaddr - 1) begin
-            h_counter_nxt = 'b0;
-            v_counter_nxt = v_counter_ff + 'b1;
-        end
-        else begin
-            h_counter_nxt = h_counter_ff + 'b1;
-        end
-        if (v_counter_ff == tvfp + tvs + tvbp + tvbd + thaddr - 1) begin
-            v_counter_nxt = 'b0;
+            blue_nxt  = 2'b00;
         end
     end
 
@@ -134,8 +149,8 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
             red_ff       <= 3'b0;
             green_ff     <= 3'b0;
             blue_ff      <= 2'b0;
-            h_counter_ff <= 'b0;
-            v_counter_ff <= 'b0;
+            h_counter_ff <=  'b0;
+            v_counter_ff <=  'b0;
         end
         else begin
             h_sync_ff    <= h_sync_nxt;

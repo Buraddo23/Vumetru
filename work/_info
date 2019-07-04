@@ -100,10 +100,10 @@ R3
 !s85 0
 !s101 -O0
 vtop_tb
-IPJ71S_?U?z6dSENO=G=KN3
+IabKQkI9O>hRbaE_BT43Nc3
 VTmB3H>oJJYE4179BB6CEQ3
 R4
-w1558627118
+w1562142893
 8C:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
 L0 3
@@ -112,7 +112,7 @@ r1
 31
 R2
 R3
-!s100 2b]LJM>A]KL8`X8=3L5n80
+!s100 1YnzITA9NcD6W8mWSCN823
 !s85 0
 !s101 -O0
 vuart
@@ -148,10 +148,10 @@ R3
 !s85 0
 !s101 -O0
 vvga
-IK5WV48k`d^EEQhfA;WV3N0
+IiJNg;fOfQzEQb>4OSj9Xz1
 V<LK58AlGhN<TcXz3C>@n61
 R4
-w1562077960
+w1562233081
 8C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 L0 3
@@ -160,15 +160,15 @@ r1
 31
 R2
 R3
-!s100 ROR;lZkOi5_NQaBOnSfjM0
+!s100 iih_Jfak=ET4>>BWheA3k3
 !s85 0
 !s101 -O0
 vvga_tb
-!s100 <]7RA7kk_Z_AV;>i>VITS3
-IFmgB;lMSPJiV6JU^JcK960
+!s100 5A@bdl^<6mo<QTGEm^nFd1
+I`flY8=hL]iXRIj20ogEI`3
 VH`EXIGXhkSH116jRgZ7g:1
 R4
-w1562077802
+w1562233011
 8C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
 L0 3

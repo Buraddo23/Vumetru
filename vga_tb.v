@@ -15,24 +15,24 @@ module vga_tb;
     
     initial begin
         tb_reset = 1'b1;
-        #1 tb_reset = 1'b0;
+        #3 tb_reset = 1'b0;
     end
     
     vga 
         #(
-            .thaddr(1),
+            .thaddr(4),
             .thfp(1),
-            .ths(1),
-            .thbp(1),
-            .thbd(0),
-            .tvaddr(1),
+            .ths(3),
+            .thbp(2),
+            .thbd(1),
+            .tvaddr(4),
             .tvfp(1),
-            .tvs(1),
-            .tvbp(1),
-            .tvbd(0),
+            .tvs(3),
+            .tvbp(2),
+            .tvbd(1),
             .h_pol(0),
             .v_pol(0),
-            .c_size(2)
+            .c_size(4)
         ) DUT(
             .pixel_clock(tb_clk), 
             .reset(tb_reset),
