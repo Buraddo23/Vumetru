@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
 
 module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue);
-    parameter board_freq = 50000000,
-              baud_rate  =     9600,
-              vga_freq   = 25175000;
+    parameter board_freq = 100000000,
+              baud_rate  =      9600,
+              vga_freq   =  25000000;
 
     input rx, clk_board, enable, reset;
     output [7:0] data;
@@ -12,7 +12,7 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
     output [1:0] blue;
     
     wire [7:0] data_uart;
-    wire clk_uart, load, clk_vga;
+    wire clk_uart, load, error, clk_vga;
     
     data_bistabil ff
         (

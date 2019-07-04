@@ -67,7 +67,7 @@ module uart(rx, clkx16, reset, data, load, error);
                 end                
             end
             read: begin
-                count_sample_nxt = count_sample_ff + 5'h1;
+                count_sample_nxt = count_sample_ff + 4'h1;
                 if ( rx === 1'b0 ) begin
                     count_zero_nxt = count_zero_ff + 1'b1;
                 end
@@ -75,12 +75,12 @@ module uart(rx, clkx16, reset, data, load, error);
                     count_one_nxt = count_one_ff + 1'b1;
                 end
                 
-                if(count_sample_ff >= 5'hF) begin
+                if(count_sample_ff >= 4'hF) begin
                     if (count_zero_ff > count_one_ff) begin
-                        data_nxt = data_ff | (0 << count_ff);
+                        data_nxt = data_ff | (1'b0 << count_ff);
                     end
                     else begin
-                        data_nxt = data_ff | (1 << count_ff);
+                        data_nxt = data_ff | (1'b1 << count_ff);
                     end
                     
                     count_zero_nxt = 4'b0;
@@ -91,7 +91,7 @@ module uart(rx, clkx16, reset, data, load, error);
                         state_nxt = det_stop;
                     end
                     else begin
-                        count_nxt = count_ff - 1;
+                        count_nxt = count_ff - 1'b1;
                     end
                 end
             end
