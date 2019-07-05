@@ -1,17 +1,17 @@
 `timescale 1ns/1ns
 
 module clk_gen(clk_in, clk_out, enable, reset);
-    parameter in_freq = 1, 
-              out_freq = 1,
-              max_value = in_freq / out_freq,
-//            bit_size = $clog2(max_value);
-              bit_size = 13;
+    parameter IN_FREQ = 100000000, 
+              OUT_FREQ = 25000000,
+              MAX_VALUE = IN_FREQ / OUT_FREQ,
+//            BIT_SIZE = $clog2(MAX_VALUE);
+              BIT_SIZE = 10;
 
     input clk_in, enable, reset;
     output clk_out;
 
     reg clk_out_ff, clk_out_nxt;
-    reg [bit_size:0] counter_ff, counter_nxt;
+    (* keep = "true" *) reg [BIT_SIZE:0] counter_ff, counter_nxt;
     
     assign clk_out = clk_out_ff;
 
@@ -22,10 +22,10 @@ module clk_gen(clk_in, clk_out, enable, reset);
         if (enable) begin
             counter_nxt = counter_ff + 1'b1;
             
-            if ( counter_ff == (max_value/2-1) ) begin
+            if ( counter_ff == (MAX_VALUE/2-1) ) begin
                 clk_out_nxt = !clk_out_ff;
             end
-            if ( counter_ff == (max_value-1) ) begin
+            if ( counter_ff == (MAX_VALUE-1) ) begin
                 clk_out_nxt = !clk_out_ff;
                 counter_nxt = 'h0;
             end

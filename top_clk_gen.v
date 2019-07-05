@@ -1,18 +1,19 @@
 `timescale 1ns/1ns
 
 module top_clk_gen(clk_board, enable, reset, clk_out_uart, clk_out_vga);
-    parameter board_freq = 50000000,
-              baud_rate  =     9600,
-              uart_freq  = baud_rate*16,
-              vga_freq   = 25175000;              
+    parameter BOARD_FREQ = 100000000,
+              BAUD_RATE  =      9600,
+              VGA_FREQ   =  25000000,
+              UART_FREQ  = BAUD_RATE*16;              
 
     input clk_board, enable, reset;
     output clk_out_uart, clk_out_vga;
     
     clk_gen 
         #(
-            .in_freq(board_freq), 
-            .out_freq(uart_freq)
+            .IN_FREQ(BOARD_FREQ), 
+            .OUT_FREQ(UART_FREQ),
+            .BIT_SIZE(13)
         ) clk_gen_uart
         (
             .clk_in(clk_board), 
@@ -23,8 +24,9 @@ module top_clk_gen(clk_board, enable, reset, clk_out_uart, clk_out_vga);
         
     clk_gen
         #(
-            .in_freq(board_freq),
-            .out_freq(vga_freq)
+            .IN_FREQ(BOARD_FREQ),
+            .OUT_FREQ(VGA_FREQ),
+            .BIT_SIZE(1)
         ) clk_gen_vga
         (
             .clk_in(clk_board),

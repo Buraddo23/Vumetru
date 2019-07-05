@@ -2,19 +2,19 @@ library verilog;
 use verilog.vl_types.all;
 entity vga is
     generic(
-        thaddr          : integer := 640;
-        thfp            : integer := 16;
-        ths             : integer := 96;
-        thbp            : integer := 48;
-        thbd            : integer := 0;
-        tvaddr          : integer := 480;
-        tvfp            : integer := 10;
-        tvs             : integer := 2;
-        tvbp            : integer := 33;
-        tvbd            : integer := 0;
-        h_pol           : integer := 0;
-        v_pol           : integer := 0;
-        c_size          : integer := 9
+        THADDR          : integer := 640;
+        THFP            : integer := 16;
+        THS             : integer := 96;
+        THBP            : integer := 48;
+        THBD            : integer := 0;
+        TVADDR          : integer := 480;
+        TVFP            : integer := 10;
+        TVS             : integer := 2;
+        TVBP            : integer := 33;
+        TVBD            : integer := 0;
+        H_POL           : integer := 0;
+        V_POL           : integer := 0;
+        C_SIZE          : integer := 9
     );
     port(
         pixel_clock     : in     vl_logic;

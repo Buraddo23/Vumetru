@@ -1,9 +1,10 @@
 `timescale 1ns/1ns
 
 module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue);
-    parameter board_freq = 100000000,
-              baud_rate  =      9600,
-              vga_freq   =  25000000;
+    parameter BOARD_FREQ = 100000000,
+              BAUD_RATE  =      9600,
+              VGA_FREQ   =  25000000,
+              C_SIZE     =         9;
 
     input rx, clk_board, enable, reset;
     output [7:0] data;
@@ -11,8 +12,9 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
     output [2:0] red, green;
     output [1:0] blue;
     
+    wire[C_SIZE:0] row, column;
     wire [7:0] data_uart;
-    wire clk_uart, load, error, clk_vga;
+    wire clk_uart, load, error, clk_vga, disp_enable;
     
     data_bistabil ff
         (
@@ -27,9 +29,9 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
         
     top_clk_gen 
         #(
-            .board_freq(board_freq), 
-            .baud_rate(baud_rate),
-            .vga_freq(vga_freq)
+            .BOARD_FREQ(BOARD_FREQ), 
+            .BAUD_RATE(BAUD_RATE),
+            .VGA_FREQ(VGA_FREQ)
         ) clk_gen_module
         (
             .clk_board(clk_board), 
@@ -49,14 +51,30 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
             .error(error)
         );
         
-    vga vga_module
+    vga_controller
+        #(
+            .C_SIZE(C_SIZE)
+        ) vga_module
         (
             .pixel_clock(clk_vga), 
             .reset(reset), 
             .h_sync(h_sync), 
             .v_sync(v_sync), 
+            .disp_enable(disp_enable), 
+            .row(row), 
+            .column(column)
+        );
+        
+    image_proc
+        #(
+            .C_SIZE(C_SIZE)
+        ) img_module
+        (
+            .reset(reset), 
+            .disp_enable(disp_enable), 
+            .row(row), 
+            .column(column), 
             .red(red), 
             .green(green), 
             .blue(blue)
-        );
 endmodule

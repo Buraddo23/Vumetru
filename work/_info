@@ -4,178 +4,178 @@ K3
 cModel Technology
 dC:\Users\Dorin\Documents\Dev\VumetruEthergate
 vclk_gen
-I9JXf]YX1@hnVm9;oki?<E3
-V4YSUC533aiH`FemC_[jRz3
+ISRD712de<ji;742W617=i0
+V0dFj=7DE3OTDe:d9mGB1=0
 Z0 dC:\Users\Dorin\Documents\Dev\Vumetru
-w1561986112
+Z1 w1562314931
 8C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/clk_gen.v
 L0 3
-Z1 OV;L;6.5b;42
+Z2 OV;L;6.5b;42
 r1
 31
-Z2 !s102 -nocovercells
-Z3 o-work work -nocovercells -O0
-!s100 DzmOliJIB]aGaQS58H^hC1
+Z3 !s102 -nocovercells
+Z4 o-work work -nocovercells -O0
+!s100 L73CVS012R8dfkKT^[>]>2
 !s85 0
 !s101 -O0
 vclk_gen_tb
 IfKnfleFI[4?=>7o@c:]@;3
 VKlD;o=NS01^Lj^RWdS>_=2
-Z4 dC:\Users\Dorin\Documents\Dev\Vumetru
-w1557418756
+Z5 dC:\Users\Dorin\Documents\Dev\Vumetru
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/clk_gen_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/clk_gen_tb.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
+R4
 !s100 KoIP33m9?0aoBkSIIUYmA3
 !s85 0
 !s101 -O0
 vdata_bistabil
-I?ieAM:1Uk_;lLGKoGz3ii2
+IAS:m?2CUOeOVUAGldYdV<2
 Vd4]jQDMC`TFkZC2a;;c=62
-R4
-w1558627276
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 M]bBmA3UB2eNl]4cA`Gc]2
+R4
+!s100 O1^;7DDmUdaVh@V3ZzZgc3
 !s85 0
 !s101 -O0
 vtop
-ID3M0@j8L]9<klLak<PlmY3
-VAhEb4CY`T2zYOlI4eDbAh2
-R4
-w1562056875
+Il^i:A]UN5Wc?I??`=FSf@2
+V??KY:5lMZfb5jgOJ_`X7z2
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/top.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 gbRdjV59VZ]<5dS^OZ8JH3
+R4
+!s100 568BWO]?czTaY1I<FfG^e0
 !s85 0
 !s101 -O0
 vtop_clk_gen
-IzNdlOGJLm@LeGd?4M3OkL1
-VDZ[NXH4ib6TX4A1QQDPUk2
-R4
-w1562056906
+IcLkU:cm7<oeC1JQkLS<023
+V064Uh0ZlhXXFVMA7_dZmJ0
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 X3<]c^SdY1jTUCek94PIa2
+R4
+!s100 UdmYmlTiW>oPIDRC^Q[4N3
 !s85 0
 !s101 -O0
 vtop_clk_gen_tb
 Ig0FfCO1U;PN2KOF_<1I8o3
 VR[gO]h3iZ2XbAcDj`9[3L0
-R4
-w1557418878
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
+R4
 !s100 SHkdg=8`iHT]?T`7HCDJ@2
 !s85 0
 !s101 -O0
 vtop_tb
-IabKQkI9O>hRbaE_BT43Nc3
+IX3?9WR3W5J`Lf><gDIJDU3
 VTmB3H>oJJYE4179BB6CEQ3
-R4
-w1562142893
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 1YnzITA9NcD6W8mWSCN823
+R4
+!s100 N<@Nf37X@M?VhNLkL:Vd63
 !s85 0
 !s101 -O0
 vuart
-IRCC`<gBAJI1]h@gTMS6K81
+IjbmAN6Pn?lgoZ4k9lXncQ3
 VmIDPijh:Be^n<eURUZG0n1
-R4
-w1558629252
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/uart.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/uart.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 l^YaeMjb;fJXjCbo^hjYd2
+R4
+!s100 UF6Mn_VN_PaH<5kBiHnSo1
 !s85 0
 !s101 -O0
 vuart_tb
 IofKUbdQdd5:KH3^N`9?:k3
 VCg^Mg0=TIfP0n0Eo]V>U63
-R4
-w1556187916
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
+R4
 !s100 ZiWgHDKGUmX10nN05h7[@3
 !s85 0
 !s101 -O0
 vvga
-IiJNg;fOfQzEQb>4OSj9Xz1
-V<LK58AlGhN<TcXz3C>@n61
-R4
-w1562233081
+Ibg]@5hg1[MS=i>ZRIOPlR3
+VU33@n9RD5d:Hzo:9f125o2
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 L0 3
-R1
+R2
 r1
 31
-R2
 R3
-!s100 iih_Jfak=ET4>>BWheA3k3
+R4
+!s100 6_UQM@lME2?F`I1ScT2^<0
 !s85 0
 !s101 -O0
 vvga_tb
-!s100 5A@bdl^<6mo<QTGEm^nFd1
-I`flY8=hL]iXRIj20ogEI`3
+!s100 AJh;1bgL4AYH=^n7J0<]S3
+IUhE5?JReR^m^9945O70^T2
 VH`EXIGXhkSH116jRgZ7g:1
-R4
-w1562233011
+R5
+R1
 8C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
 FC:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
 L0 3
-R1
+R2
 r1
 !s85 0
 31
 !s101 -O0
-R2
 R3
+R4

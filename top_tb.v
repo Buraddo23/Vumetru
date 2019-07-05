@@ -58,9 +58,9 @@ module top_tb;
     
     top 
         #(
-            .board_freq(64), 
-            .baud_rate(1),
-            .vga_freq(32)
+            .BOARD_FREQ(64), 
+            .BAUD_RATE(1),
+            .VGA_FREQ(16)
         ) DUT(
             .rx(tb_rx), 
             .clk_board(tb_clk_board), 

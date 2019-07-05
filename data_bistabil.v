@@ -14,7 +14,7 @@ module data_bistabil(clock, enable, reset, data_in, load, error, data_out);
         data_out_nxt = data_out_ff;
         
         if (enable) begin
-            if (load) begin
+            if (load && !error) begin
                 data_out_nxt = data_in;
             end 
             else begin

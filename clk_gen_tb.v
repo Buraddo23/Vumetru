@@ -1,7 +1,6 @@
 `timescale 1ns/1ns
 
 module clk_gen_tb;
-    
     reg tb_clk_in, tb_enable, tb_reset;
     wire tb_clk_out;
     
