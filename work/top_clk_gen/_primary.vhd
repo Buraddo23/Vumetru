@@ -2,9 +2,9 @@ library verilog;
 use verilog.vl_types.all;
 entity top_clk_gen is
     generic(
-        board_freq      : integer := 100000000;
-        baud_rate       : integer := 9600;
-        vga_freq        : integer := 25000000
+        BOARD_FREQ      : integer := 100000000;
+        BAUD_RATE       : integer := 9600;
+        VGA_FREQ        : integer := 25000000
     );
     port(
         clk_board       : in     vl_logic;

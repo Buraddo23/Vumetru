@@ -2,11 +2,11 @@ library verilog;
 use verilog.vl_types.all;
 entity uart is
     generic(
-        idle            : integer := 0;
-        det_start       : integer := 1;
-        read            : integer := 2;
-        det_stop        : integer := 3;
-        err             : integer := 4
+        IDLE            : integer := 0;
+        DET_START       : integer := 1;
+        READ            : integer := 2;
+        DET_STOP        : integer := 3;
+        ERR             : integer := 4
     );
     port(
         rx              : in     vl_logic;

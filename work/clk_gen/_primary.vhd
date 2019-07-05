@@ -2,9 +2,9 @@ library verilog;
 use verilog.vl_types.all;
 entity clk_gen is
     generic(
-        in_freq         : integer := 100000000;
-        out_freq        : integer := 25000000;
-        bit_size        : integer := 10
+        IN_FREQ         : integer := 100000000;
+        OUT_FREQ        : integer := 25000000;
+        BIT_SIZE        : integer := 10
     );
     port(
         clk_in          : in     vl_logic;

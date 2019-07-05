@@ -11,7 +11,8 @@ module clk_gen(clk_in, clk_out, enable, reset);
     output clk_out;
 
     reg clk_out_ff, clk_out_nxt;
-    (* keep = "true" *) reg [BIT_SIZE:0] counter_ff, counter_nxt;
+    //(* keep = "true" *) 
+    reg [BIT_SIZE:0] counter_ff, counter_nxt;
     
     assign clk_out = clk_out_ff;
 

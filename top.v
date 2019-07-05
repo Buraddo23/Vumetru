@@ -71,10 +71,13 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
         ) img_module
         (
             .reset(reset), 
+            .clock(clk_vga),
             .disp_enable(disp_enable), 
             .row(row), 
             .column(column), 
             .red(red), 
             .green(green), 
             .blue(blue)
+        );
+        
 endmodule

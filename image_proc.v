@@ -1,9 +1,9 @@
 `timescale 1ns/1ns
 
-module image_proc(reset, disp_enable, row, column, red, green, blue);
+module image_proc(reset, clock, disp_enable, row, column, red, green, blue);
     parameter C_SIZE = 9;
     
-    input reset, disp_enable;
+    input reset, clock, disp_enable;
     input [C_SIZE:0] row, column;
     output [2:0] red, green;
     output [1:0] blue;
@@ -31,6 +31,7 @@ module image_proc(reset, disp_enable, row, column, red, green, blue);
             red_nxt   = 3'b0;
             green_nxt = 3'b0;
             blue_nxt  = 2'b0;
+        end
     end
     
     always @ (posedge clock or posedge reset) begin
