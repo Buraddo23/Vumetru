@@ -25,7 +25,7 @@ module vga_controller(pixel_clock, reset, h_sync, v_sync, disp_enable, row, colu
     assign h_sync      = h_sync_ff;
     assign v_sync      = v_sync_ff;
     assign row         = v_counter_ff;
-    assign column      = h_counter_ff - 1'b1;
+    assign column      = h_counter_ff - 2'b10;
     assign disp_enable = de_ff;
 
     always @ (*) begin
@@ -51,12 +51,8 @@ module vga_controller(pixel_clock, reset, h_sync, v_sync, disp_enable, row, colu
             v_sync_nxt = !V_POL;
         end
         
-        if ((h_counter_ff >= THBD) && (h_counter_ff < THBD + THADDR) && (v_counter_ff >= TVBD) && (v_counter_ff < TVBD + TVADDR)) begin
+        if (!((h_counter_ff >= THBD) && (h_counter_ff < THBD + THADDR - 1) && (v_counter_ff >= TVBD) && (v_counter_ff < TVBD + TVADDR))) begin
             //At display area
-            de_nxt = 1'b1;
-        end
-        else begin
-            //Outside display area (sync period)
             de_nxt = 1'b0;
         end
 
@@ -64,6 +60,7 @@ module vga_controller(pixel_clock, reset, h_sync, v_sync, disp_enable, row, colu
         if (h_counter_ff == THBD + THADDR + THBD + THFP + THS + THBP - 1) begin
             h_counter_nxt = 'b0;
             v_counter_nxt = v_counter_ff + 1'b1;
+            de_nxt = 1'b1;
         end
         else begin
             h_counter_nxt = h_counter_ff + 1'b1;
@@ -71,7 +68,6 @@ module vga_controller(pixel_clock, reset, h_sync, v_sync, disp_enable, row, colu
         
         if (v_counter_ff == TVBD + TVADDR + TVBD + TVFP + TVS + TVBP) begin
             v_counter_nxt = 'b0;
-            de_nxt = 1'b1;
         end
     end
 
