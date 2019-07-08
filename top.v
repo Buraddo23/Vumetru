@@ -3,8 +3,7 @@
 module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue);
     parameter BOARD_FREQ = 100000000,
               BAUD_RATE  =      9600,
-              VGA_FREQ   =  25000000,
-              C_SIZE     =         9;
+              VGA_FREQ   =  25000000;
 
     input rx, clk_board, enable, reset;
     output [7:0] data;
@@ -12,9 +11,8 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
     output [2:0] red, green;
     output [1:0] blue;
     
-    wire[C_SIZE:0] row, column;
     wire [7:0] data_uart;
-    wire clk_uart, load, error, clk_vga, disp_enable;
+    wire clk_uart, load, error, clk_vga;
     
     data_bistabil ff
         (
@@ -51,7 +49,7 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
             .error(error)
         );
         
-    vga_controller
+    vga
         #(
             .C_SIZE(C_SIZE)
         ) vga_module
@@ -60,24 +58,8 @@ module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue)
             .reset(reset), 
             .h_sync(h_sync), 
             .v_sync(v_sync), 
-            .disp_enable(disp_enable), 
-            .row(row), 
-            .column(column)
-        );
-        
-    image_proc
-        #(
-            .C_SIZE(C_SIZE)
-        ) img_module
-        (
-            .reset(reset), 
-            .clock(clk_vga),
-            .disp_enable(disp_enable), 
-            .row(row), 
-            .column(column), 
             .red(red), 
             .green(green), 
             .blue(blue)
-        );
-        
+        );        
 endmodule

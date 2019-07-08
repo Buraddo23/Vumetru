@@ -5,13 +5,6 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	clk_gen_tb
 
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/img_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/img_tb.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module img_tb
-
-Top level modules:
-	img_tb
-
 } {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top_clk_gen_tb.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 -- Compiling module top_clk_gen_tb
@@ -40,12 +33,12 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 Top level modules:
 	top_clk_gen
 
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/image_proc.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/image_proc.v
+} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/vga.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/vga.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module image_proc
+-- Compiling module vga
 
 Top level modules:
-	image_proc
+	vga
 
 } {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/top_tb.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -53,6 +46,13 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 
 Top level modules:
 	top_tb
+
+} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
+Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
+-- Compiling module vga_tb
+
+Top level modules:
+	vga_tb
 
 } {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/testbench_uart.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
@@ -67,13 +67,6 @@ Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
 
 Top level modules:
 	top
-
-} {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/vga_tb.v
-Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009
--- Compiling module vga_tb
-
-Top level modules:
-	vga_tb
 
 } {} {}} C:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v {1 {vlog -work work -nocovercells C:/Users/Dorin/Documents/Dev/Vumetru/data_bistabil.v
 Model Technology ModelSim ALTERA vlog 6.5b Compiler 2009.10 Oct  1 2009

@@ -2,8 +2,9 @@
 
 module vga_tb;
     reg tb_clk, tb_reset;
-    wire tb_h_sync, tb_v_sync, tb_de;
-    wire [4:0] tb_row, tb_column;
+    wire tb_h_sync, tb_v_sync;
+    wire [2:0] tb_red, tb_green;
+    wire [1:0] tb_blue;
     
     initial begin
         tb_clk = 1'b1;
@@ -17,7 +18,7 @@ module vga_tb;
         #5 tb_reset = 1'b0;
     end
     
-    vga_controller
+    vga
         #(
             .THADDR(4),
             .THFP(1),
@@ -37,8 +38,8 @@ module vga_tb;
             .reset(tb_reset),
             .h_sync(tb_h_sync), 
             .v_sync(tb_v_sync), 
-            .disp_enable(tb_de), 
-            .row(tb_row), 
-            .column(tb_column)
+            .red(tb_red), 
+            .green(tb_green), 
+            .blue(tb_blue)
         );
 endmodule
