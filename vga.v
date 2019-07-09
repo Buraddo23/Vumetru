@@ -1,6 +1,6 @@
 `timescale 1ns/1ns
 
-module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
+module vga(pixel_clock, reset, data, h_sync, v_sync, red, green, blue);
     parameter THADDR = 640, //H addresable video length
               THFP   =  16, //H front porch
               THS    =  96, //H sync time 
@@ -16,6 +16,7 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
               C_SIZE =   9; //Counter no of bits
     
     input pixel_clock, reset;
+    input [7:0] data;
     output h_sync, v_sync;
     output [2:0] red, green;
     output [1:0] blue;
@@ -71,9 +72,26 @@ module vga(pixel_clock, reset, h_sync, v_sync, red, green, blue);
         
         if ((h_counter_ff >= THBD) && (h_counter_ff < THBD + THADDR) && (v_counter_ff >= TVBD) && (v_counter_ff < TVBD + TVADDR)) begin
             //At display area
-            red_nxt   = 3'b111;
-            green_nxt = 3'b111;
-            blue_nxt  = 2'b11;
+            if ((h_counter_ff < (100+data)) && (v_counter_ff < (200+data))) begin
+                red_nxt   = 3'b111;
+                green_nxt = 3'b000;
+                blue_nxt  = 2'b00;
+            end
+            else if ((h_counter_ff < 200) && (v_counter_ff < 300)) begin
+                red_nxt   = 3'b0;
+                green_nxt = 3'b111;
+                blue_nxt  = 2'b0;
+            end
+            else if ((h_counter_ff < 300) && (v_counter_ff < 400)) begin
+                red_nxt   = 3'b0;
+                green_nxt = 3'b0;
+                blue_nxt  = 2'b11;
+            end
+            else begin
+                red_nxt   = 3'b0;
+                green_nxt = 3'b0;
+                blue_nxt  = 2'b0;
+            end
         end
         else begin
             //Outside display area (sync period)

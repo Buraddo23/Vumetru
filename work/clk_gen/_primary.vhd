@@ -8,8 +8,8 @@ entity clk_gen is
     );
     port(
         clk_in          : in     vl_logic;
-        clk_out         : out    vl_logic;
         enable          : in     vl_logic;
-        reset           : in     vl_logic
+        reset           : in     vl_logic;
+        clk_out         : out    vl_logic
     );
 end clk_gen;

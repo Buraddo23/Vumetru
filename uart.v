@@ -1,11 +1,11 @@
 `timescale 1ns/1ns
 
 module uart(rx, clkx16, reset, data, load, error);
-    parameter IDLE      = 3'b000,
-              DET_START = 3'b001,
-              READ      = 3'b010,
-              DET_STOP  = 3'b011,
-              ERR       = 3'b100;
+    localparam IDLE      = 3'b000,
+               DET_START = 3'b001,
+               READ      = 3'b010,
+               DET_STOP  = 3'b011,
+               ERR       = 3'b100;
     
     input rx, reset, clkx16;
     output [7:0] data;

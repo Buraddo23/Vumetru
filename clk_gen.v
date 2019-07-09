@@ -1,11 +1,12 @@
 `timescale 1ns/1ns
 
-module clk_gen(clk_in, clk_out, enable, reset);
+module clk_gen(clk_in, enable, reset, clk_out);
     parameter IN_FREQ = 100000000, 
               OUT_FREQ = 25000000,
-              MAX_VALUE = IN_FREQ / OUT_FREQ,
 //            BIT_SIZE = $clog2(MAX_VALUE);
               BIT_SIZE = 10;
+     
+    localparam MAX_VALUE = IN_FREQ / OUT_FREQ;
 
     input clk_in, enable, reset;
     output clk_out;

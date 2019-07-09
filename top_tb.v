@@ -4,7 +4,6 @@ module top_tb;
     parameter delay = 128;
 
     reg tb_rx, tb_clk_board, tb_enable, tb_reset;
-    wire [7:0] tb_data;
     wire tb_h_sync, tb_v_sync;
     wire [2:0] tb_red, tb_green;
     wire [1:0] tb_blue;
@@ -65,8 +64,7 @@ module top_tb;
             .rx(tb_rx), 
             .clk_board(tb_clk_board), 
             .enable(tb_enable), 
-            .reset(tb_reset), 
-            .data(tb_data),
+            .reset(tb_reset),
             .h_sync(tb_h_sync), 
             .v_sync(tb_v_sync), 
             .red(tb_red), 

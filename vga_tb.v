@@ -2,6 +2,7 @@
 
 module vga_tb;
     reg tb_clk, tb_reset;
+    reg [7:0] tb_data;
     wire tb_h_sync, tb_v_sync;
     wire [2:0] tb_red, tb_green;
     wire [1:0] tb_blue;
@@ -15,6 +16,7 @@ module vga_tb;
     
     initial begin
         tb_reset = 1'b1;
+        tb_data  = 8'hFF;
         #5 tb_reset = 1'b0;
     end
     
@@ -36,6 +38,7 @@ module vga_tb;
         ) DUT(
             .pixel_clock(tb_clk), 
             .reset(tb_reset),
+            .data(tb_data),
             .h_sync(tb_h_sync), 
             .v_sync(tb_v_sync), 
             .red(tb_red), 

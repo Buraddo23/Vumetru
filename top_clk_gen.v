@@ -3,8 +3,9 @@
 module top_clk_gen(clk_board, enable, reset, clk_out_uart, clk_out_vga);
     parameter BOARD_FREQ = 100000000,
               BAUD_RATE  =      9600,
-              VGA_FREQ   =  25000000,
-              UART_FREQ  = BAUD_RATE*16;              
+              VGA_FREQ   =  25000000;
+              
+    localparam UART_FREQ  = BAUD_RATE*16;              
 
     input clk_board, enable, reset;
     output clk_out_uart, clk_out_vga;
