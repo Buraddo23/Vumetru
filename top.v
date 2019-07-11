@@ -1,16 +1,17 @@
 `timescale 1ns/1ns
 
-module top(rx, clk_board, enable, reset, h_sync, v_sync, red, green, blue);
+module top(rx, clk_board, enable, reset, data, h_sync, v_sync, red, green, blue);
     parameter BOARD_FREQ = 100000000,
               BAUD_RATE  =    115200,
               VGA_FREQ   =  25000000;
 
     input rx, clk_board, enable, reset;
+    output [7:0] data;
     output h_sync, v_sync;
     output [2:0] red, green;
     output [1:0] blue;
     
-    wire [7:0] data_uart, data;
+    wire [7:0] data_uart;
     wire clk_uart, load, error, clk_vga;
     
     data_bistabil ff

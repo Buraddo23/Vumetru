@@ -77,10 +77,10 @@ module uart(rx, clkx16, reset, data, load, error);
                 
                 if(count_sample_ff >= 4'hF) begin
                     if (count_zero_ff > count_one_ff) begin
-                        data_nxt = data_ff | (1'b0 << count_ff);
+                        data_nxt = data_ff | (1'b0 << (7 - count_ff));
                     end
                     else begin
-                        data_nxt = data_ff | (1'b1 << count_ff);
+                        data_nxt = data_ff | (1'b1 << (7 - count_ff));
                     end
                     
                     count_zero_nxt = 4'b0;

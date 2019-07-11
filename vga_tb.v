@@ -16,8 +16,11 @@ module vga_tb;
     
     initial begin
         tb_reset = 1'b1;
-        tb_data  = 8'hFF;
         #5 tb_reset = 1'b0;
+        #10000 tb_data = 8'h00;
+        #10000 tb_data = 8'h01;
+        #10000 tb_data = 8'h02;
+        #10000 tb_data = 8'h03;
     end
     
     vga
