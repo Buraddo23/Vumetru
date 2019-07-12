@@ -75,7 +75,7 @@ module vga(pixel_clock, reset, data, h_sync, v_sync, red, green, blue);
         end
         else begin
             h_counter_nxt = h_counter_ff + 1'b1;
-            address_nxt = h_counter_ff + v_counter_ff * 121 + 2;
+            address_nxt = (h_counter_ff-260) + (v_counter_ff-24) * 121 + 2;
         end
         
         if (v_counter_ff == TVBD + TVADDR + TVBD + TVFP + TVS + TVBP) begin
@@ -88,7 +88,7 @@ module vga(pixel_clock, reset, data, h_sync, v_sync, red, green, blue);
             green_nxt = 3'b0;
             blue_nxt  = 2'b0;
             
-            if ((h_counter_ff > 200) && (h_counter_ff <= 321) && (v_counter_ff < 174)) begin
+            if ((h_counter_ff > 260) && (h_counter_ff <= 381) && (v_counter_ff >= 24) && (v_counter_ff < 200)) begin
                 //Picture
                 color     = palette[color_data];
                 red_nxt   = color[7:5];
@@ -103,21 +103,21 @@ module vga(pixel_clock, reset, data, h_sync, v_sync, red, green, blue);
                 blue_nxt  = 2'b11;
             end
             
-            if ((v_counter_ff > 240) && (v_counter_ff < 440) && (h_counter_ff > 280) && (h_counter_ff < 300)) begin
+            if ((v_counter_ff > 240) && (v_counter_ff < 440) && (h_counter_ff > 210) && (h_counter_ff < 230)) begin
                 //Left leg
                 red_nxt   = 3'b111;
                 green_nxt = 3'b111;
                 blue_nxt  = 2'b11;
             end
             
-            if ((v_counter_ff > 240) && (v_counter_ff < 440) && (h_counter_ff > 360) && (h_counter_ff < 380)) begin
+            if ((v_counter_ff > 240) && (v_counter_ff < 440) && (h_counter_ff > 310) && (h_counter_ff < 330)) begin
                 //Left leg
                 red_nxt   = 3'b111;
                 green_nxt = 3'b111;
                 blue_nxt  = 2'b11;
             end   
 
-            if ((h_counter_ff - 320) * (h_counter_ff - 320) + (v_counter_ff - 280) * (v_counter_ff - 280) < (50 + data * data)) begin
+            if ((h_counter_ff - 320) * (h_counter_ff - 320) + (v_counter_ff - 280) * (v_counter_ff - 280) < (data/2) * (data/2)) begin
                 //Circle
                 red_nxt   = 3'b0;
                 green_nxt = 3'b100;
